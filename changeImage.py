@@ -17,7 +17,7 @@ os.chdir(dir_path)
 for root, dirs, files in os.walk(".")
   for file in files:
     # ensures only .tiff files are being iterated on since .jpegs are being saved in same path
-    if ".tiff" in file:
+    if file.endswith(".tiff"):
       # splits file name and ext
       f, e = os.path.splitext(file)
       # joins directory path and file name to create file path
