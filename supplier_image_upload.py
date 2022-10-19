@@ -17,7 +17,7 @@ url = "http://localhost/upload/"
 # iterates through directory
 for file in os.listdir(dir_path):
   # sorts for .jpeg files
-  if file.endwith(".jpeg", ".jpg"):
+  if file.endswith(".jpeg", ".jpg"):
     file_path = str(dir_path) + str(file)
     with open(file_path, 'rb') as opened:
       # makes a POST request to web service and then prints the response status code
