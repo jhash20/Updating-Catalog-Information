@@ -22,7 +22,7 @@ for file in os.listdir(dir_path):
     with open(file_path, 'rb') as opened:
       # makes a POST request to web service and then prints the response status code
       response = request.post(url, files={'file': opened})
-      print(response, status_code)
+      print(response.status_code)
   else:
     # prints an error that the script did not process file as it was not a .jpeg
     print("Error: Did not process, " + file + " is not a .jpeg")
