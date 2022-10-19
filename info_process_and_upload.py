@@ -32,7 +32,7 @@ for item in os.listdir(descr_dir):
       # additionally removes 'lbs' string and converts to integer
       descr_dict['weight (in lbs)'] = int(descr_line[1].replace('lbs', '').strip())
       descr_dict['description'] = descr_line[3].strip()
-      #TODO: need to add value for image_name key that matches .jpeg to description text file
+      # uses item_name + .jpeg value so Django application can pair description and image in catalog
       descr_dict['image_name'] = str(item_name) + ".jpeg"
       # sends a POST request to the endpoint of the web service and then prints the status code of the request
       response = requests.post(url, json=descr_dict)
