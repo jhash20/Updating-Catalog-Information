@@ -20,7 +20,7 @@ for file in os.listdir(dir_path):
   if file.endswith(".jpeg", ".jpg"):
     file_path = str(dir_path) + str(file)
     with open(file_path, 'rb') as opened:
-      # makes a POST request to web service and then prints the response status code
+      # makes a POST request to web service endpoint and then prints the response status code
       response = request.post(url, files={'file': opened})
       print(response.status_code)
   else:
