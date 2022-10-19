@@ -16,16 +16,18 @@ os.chdir(dir_path)
 # iterates through files in directory
 for root, dirs, files in os.walk(".")
   for file in files:
-    # splits file name and ext
-    f, e = os.path.splitext(file)
-    # joins directory path to file name to create file path
-    file_path = os.path.join(dir_path, f)
-    # reformats images to specified format and image resolution and saves in the same path
-    try:
-      with Image.open(file_path) as im:
-        new_im = im.convert('RGB')
-        new_im = new_im.resize((600,400))
-        new_im = new_im.save(file_path + .jpeg)
-    # prints an exception if unable to convert file and file name
-    except:
-      print('Cannot convert' + str(f))
+    # ensures only .tiff files are being iterated on since .jpegs are being saved in same path
+    if ".tiff" in file:
+      # splits file name and ext
+      f, e = os.path.splitext(file)
+      # joins directory path and file name to create file path
+      file_path = os.path.join(dir_path, f)
+      # reformats images to specified format and image resolution and saves in the same path
+      try:
+        with Image.open(file_path) as im:
+          new_im = im.convert('RGB')
+          new_im = new_im.resize((600,400))
+          new_im = new_im.save(file_path + ".jpeg")
+      # prints an exception if unable to convert file and file name
+      except (IOError, OSError):
+        print('Cannot convert' + str(f))
