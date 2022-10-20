@@ -20,7 +20,7 @@ url = "http://<linux-instance-external-IP>/fruits"
 # iterates through directory of description text files
 for item in os.listdir(descr_dir):
   # if conditional to ensure that script is only iterating text files
-  if item.endswith('.txt', '.text'):
+  if item.endswith('.txt']):
     # intializes path of text file
     item_path = str(descr_dir) + str(item)
     with open(item_path) as descr:
