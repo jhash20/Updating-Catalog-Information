@@ -10,7 +10,7 @@ to: .JPEG format with image resolution 600x400
 """"
 
 # changes to directory path containing images to be modified
-dir_path = os.path.expandusr('~') + '/supplier-data/images/'
+dir_path = os.path.expanduser('~') + '/supplier-data/images/'
 os.chdir(dir_path)
 
 # iterates through files in directory
