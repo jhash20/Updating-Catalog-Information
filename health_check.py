@@ -7,8 +7,7 @@ import socket
 from report_emailer import generate as email_generate
 from report_emailer import send as email_send
 
-"""
-Script that runs checks 
+"""Script that runs health checks 
 for cpu usage, disk space usage, memory usage, and hostname
 and then sends an email alert if check fails
 """
@@ -31,8 +30,7 @@ def check_free_disk_space(disk):
 def check_available_memory():
   """Checks if available memory is less than 500MB"""
   memory = psutil.virtual_memory()
-  # converts memory available to MB
-  memory_available = int(memory.available) / 1024 ** 2 
+  memory_available = int(memory.available) / 1024 ** 2  # converts memory available to MB
   if memory_available < 500:
     case = "Available memory is less than 500MB"
     email_alert(case)
@@ -51,7 +49,7 @@ def check_hostname(hostname, ip_address):
 def email_alert(case):  
   """Generates and sends an email alert with error case if any check fails"""
   sender = "automation@example.com"
-  recipient = "{}@example.com".format(os.environ["USER"])
+  recipient = "{}@example.com".format(os.environ["USER"]) # change to <user>@example.com if used with cron
   subject = "Error - {}".format(case)
   body = "Please check your system and resolve the issue as soon as possible."
   attachment_path = None
