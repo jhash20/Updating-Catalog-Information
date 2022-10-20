@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-"""
+'''
 Script that processes text files in a directory and 
 generates a report and sends it to supplier via email, 
 detailing the type and amount of each fruit uploaded to catalog.
-"""
+'''
 
 # imports necessary modules
 import os, sys
@@ -14,7 +14,7 @@ from report_emailer import generate as email_generate
 from report_emailer import send as email_send
 
 def generate_info(dir_path):
-  """Generates info string with newlines in correct format for pdf BodyText."""
+  '''Generates info string with newlines in correct format for pdf BodyText.'''
   # initalizes list to store each item string 
   info_list = []
   # iterates through directory of text files passed by main() 
@@ -38,11 +38,11 @@ def generate_info(dir_path):
   return info_string
 
 def main(argv):
-  """Processes directory of text files, generates a pdf, and sends pdf via email."""
+  '''Processes directory of text files, generates a pdf, and sends pdf via email.'''
   # gets today's date in GMT time (default) to be used for title of report pdf
   current_date = datetime.datetime.now()
   # initializes directory path to generate info to be used for info of report pdf
-  dir_path = "/supplier_data/descriptions/"
+  dir_path = os.path.expanduser('~') + "/supplier-data/descriptions/"
   # initializes arguments to be passed to pdf_generate()
   title = "Processed Update on " + str(current_date)
   info = generate_info(dir_path)
