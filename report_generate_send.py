@@ -40,7 +40,7 @@ def generate_info(dir_path):
 def main(argv):
   '''Processes directory of text files, generates a pdf, and sends pdf via email.'''
   # gets today's date in GMT time (default) to be used for title of report pdf
-  current_date = datetime.datetime.now()
+  current_date = datetime.datetime.now().strftime('%Y-%m-%d')
   # initializes directory path to generate info to be used for info of report pdf
   dir_path = os.path.expanduser('~') + "/supplier-data/descriptions/"
   # initializes arguments to be passed to pdf_generate()
