@@ -51,7 +51,7 @@ def check_hostname(hostname, ip_address):
 def email_alert(case):  
   """Generates and sends an email alert with error case if any check fails"""
   sender = "automation@example.com"
-  recipient = "{}@example.com".fomat(os.environ["USER"])
+  recipient = "{}@example.com".format(os.environ["USER"])
   subject = "Error - {}".format(case)
   body = "Please check your system and resolve the issue as soon as possible."
   message = email_generate(sender, recipient, subject, body)
