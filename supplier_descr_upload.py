@@ -30,7 +30,7 @@ for item in os.listdir(descr_dir):
       descr_line = descr.read().split('\n')
       descr_dict['name'] = descr_line[0].strip()
       # additionally removes 'lbs' string and converts to integer
-      descr_dict['weight (in lbs)'] = int(descr_line[1].replace('lbs', '').strip())
+      descr_dict['weight'] = int(descr_line[1].replace('lbs', '').strip())
       descr_dict['description'] = descr_line[2].strip()
       # uses item_name + .jpeg value so Django application can pair description and image in catalog
       descr_dict['image_name'] = str(item_name) + ".jpeg"
