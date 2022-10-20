@@ -13,7 +13,7 @@ converting the dictionary into JSON format in the process.
 """
 
 # initializes description directory path, escription dictionary, and url
-descr_dir = '/supplier-data/descriptions/'
+descr_dir = os.path.expanduser('~') + '/supplier-data/descriptions/'
 descr_dict = {}
 url = "http://<linux-instance-external-IP>/fruits"
 
