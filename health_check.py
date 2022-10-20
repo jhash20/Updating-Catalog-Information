@@ -3,6 +3,7 @@
 import os, sys
 import psutil
 import shutil
+import socket
 from report_emailer import generate as email_generate
 from report_emailer import send as email_send
 
@@ -36,10 +37,17 @@ def check_available_memory():
     case = "Available memory is less than 500MB"
     email_alert(case)
   
-def check_hostname():
+def check_hostname(hostname, ip_address):
   """Checks if the hostname cannot be resolved to IP address"""
-  #TODO: function
-  case = "local host cannot be resolved"
+  try:
+    socket.gethostbyname(hostname)
+    if socket.gethostbyname(hostname) != ip_address:
+      case = "local host cannot be resolved"
+      email_alert(case)
+  except socket.error:
+    case = "local host cannot be resolved"
+    email_alert(case)
+  
 
 def email_alert(case):  
   """Generates and sends an email alert with error case if any check fails"""
@@ -55,7 +63,7 @@ def main(argv):
   check_cpu_usage()
   check_free_disk_space("/")
   check_available_memory()
-  check_hostname()
+  check_hostname('localhost', '127.0.0.1')
   
 if __name__ == "__main__":
   main(sys.argv)
