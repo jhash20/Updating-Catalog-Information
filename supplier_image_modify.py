@@ -3,11 +3,11 @@
 import os, sys
 from PIL import Image
 
-"""
+'''
 Script to reformat images:
 from: .TIFF format with image resolution 3000x2000
 to: .JPEG format with image resolution 600x400
-""""
+'''
 
 # changes to directory path containing images to be modified
 dir_path = os.path.expanduser('~') + '/supplier-data/images/'
