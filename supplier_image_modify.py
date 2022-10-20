@@ -30,4 +30,4 @@ for root, dirs, files in os.walk("."):
           new_im = new_im.save(file_path + ".jpeg")
       # prints an exception if unable to convert file and file name
       except (IOError, OSError):
-        print('Cannot convert' + str(f))
+        print('Cannot convert: ' + str(f))
