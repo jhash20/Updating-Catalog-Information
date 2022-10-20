@@ -42,10 +42,10 @@ def check_hostname(hostname, ip_address):
   try:
     socket.gethostbyname(hostname)
     if socket.gethostbyname(hostname) != ip_address:
-      case = "local host cannot be resolved"
+      case = "localhost cannot be resolved"
       email_alert(case)
   except socket.error:
-    case = "local host cannot be resolved"
+    case = "localhost cannot be resolved"
     email_alert(case)
   
 
