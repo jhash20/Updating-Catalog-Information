@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
-"""
+'''
 Module that generates pdf report 
-"""
+'''
 
-from reportlabs.platypus import getSampleStyleSheet
-from reportlabs.platypus import SimpleDocTemplate
-from reportlabs.platypus import Paragraph, Spacer
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import SimpleDocTemplate
+from reportlab.platypus import Paragraph, Spacer
 
 def generate(filename, title, info):
   styles = getSampleStyleSheet()
