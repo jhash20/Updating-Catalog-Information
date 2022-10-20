@@ -20,14 +20,15 @@ for root, dirs, files in os.walk("."):
     if file.endswith(".tiff"):
       # splits file name and ext
       f, e = os.path.splitext(file)
-      # joins directory path and file name to create file path
-      file_path = os.path.join(dir_path, f)
+      # joins directory path and file name to create new and old file paths
+      old_file_path = str(dir_path + file)
+      new_file_path = os.path.join(dir_path, f)
       # reformats images to specified format and image resolution and saves in the same path
       try:
-        with Image.open(file_path) as im:
+        with Image.open(old_file_path) as im:
           new_im = im.convert('RGB')
           new_im = new_im.resize((600,400))
-          new_im = new_im.save(file_path + ".jpeg")
+          new_im = new_im.save(new_file_path + ".jpeg")
       # prints an exception if unable to convert file and file name
       except (IOError, OSError):
         print('Cannot convert: ' + str(f))
