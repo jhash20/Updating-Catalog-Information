@@ -13,7 +13,7 @@ and then sends an email alert if check fails
 """
 
 def check_cpu_usage():
-  """ """
+  """Checks if cpu usage is over 80%"""
   cpu_usage = psutil.cpu_percent(4) 
   if int(cpu_usage) > 80:
     case = "CPU usage is over 80%"
