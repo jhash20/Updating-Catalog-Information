@@ -2,14 +2,13 @@
 
 """
 Module that generates pdf report 
-of type and amount of fruit uploaded to catalog
 """
 
 from reportlabs.platypus import getSampleStyleSheet
 from reportlabs.platypus import SimpleDocTemplate
 from reportlabs.platypus import Paragraph, Spacer
 
-def generate_report(filename, title, info):
+def generate(filename, title, info):
   styles = getSampleStyleSheet()
   report = SimpleDocTemplate(filename)
   report_title = Paragraph(title, styles["h1"])
