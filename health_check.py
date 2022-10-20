@@ -30,7 +30,7 @@ def check_free_disk_space(disk):
       
 def check_available_memory():
   """Checks if available memory is less than 500MB"""
-  memory = psutil.virutal_memory()
+  memory = psutil.virtual_memory()
   # converts memory available to MB
   memory_available = int(memory.available) / 1024 ** 2 
   if memory_available < 500:
@@ -54,7 +54,8 @@ def email_alert(case):
   recipient = "{}@example.com".format(os.environ["USER"])
   subject = "Error - {}".format(case)
   body = "Please check your system and resolve the issue as soon as possible."
-  message = email_generate(sender, recipient, subject, body)
+  attachment_path = None
+  message = email_generate(sender, recipient, subject, body, attachment_path)
   email_send(message)
 
 def main(argv):
