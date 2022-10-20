@@ -14,7 +14,7 @@ dir_path = os.path.expandusr('~') + '/supplier-data/images/'
 os.chdir(dir_path)
 
 # iterates through files in directory
-for root, dirs, files in os.walk(".")
+for root, dirs, files in os.walk("."):
   for file in files:
     # ensures only .tiff files are being iterated on since .jpegs are being saved in same path
     if file.endswith(".tiff"):
