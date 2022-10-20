@@ -47,7 +47,6 @@ def check_hostname(hostname, ip_address):
   except socket.error:
     case = "localhost cannot be resolved"
     email_alert(case)
-  
 
 def email_alert(case):  
   """Generates and sends an email alert with error case if any check fails"""
