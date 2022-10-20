@@ -20,7 +20,7 @@ def generate_info(dir_path):
   # iterates through directory of text files passed by main() 
   for item in os.listdir(dir_path):
     # conditional ensures that files iterated are text files
-    if item.endswith(".txt", ".text"):
+    if item.endswith(".txt"):
       # initializes full item path to be opened
       item_path = str(dir_path) + str(item)
       with open(item_path) as info:
