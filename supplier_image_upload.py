@@ -9,7 +9,7 @@ and uploads .jpeg files to web service endpoint
 """
 
 # initializes directory path and moves to directory
-dir_path = os.path.expand.usr('~') + '/supplier-data/images/'
+dir_path = os.path.expanduser('~') + '/supplier-data/images/'
 os.chdir(dir_path)
 # intializes url variable
 url = "http://localhost/upload/"
