@@ -34,7 +34,7 @@ def generate_info(dir_path):
         # appends strings to list
         info_list.append(newstring)
   # joins list into one string and then returns string to main()
-  info_string = info_list.join()
+  info_string = ''.join(info_list)
   return info_string
 
 def main(argv):
