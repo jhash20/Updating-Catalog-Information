@@ -30,7 +30,7 @@ def generate_info(dir_path):
         weight = str(info_line[1].strip())
         newline = '<br/>'
         # adds specified lines and newline symbols into one string
-        newstring = name + newline + weight + newline + newline
+        newstring = 'name: ' + name + newline + 'weight: ' + weight + newline + newline
         # appends strings to list
         info_list.append(newstring)
   # joins list into one string and then returns string to main()
