@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
-'''
-Module that generates pdf report 
-'''
+"""Module that generates pdf report"""
 
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate
