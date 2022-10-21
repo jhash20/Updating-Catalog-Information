@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""Runs health checks and sends an email alert if any check fails
+for cpu usage, disk space usage, memory usage, and hostname resolution
+"""
+
 import os, sys
 import psutil
 import shutil
@@ -7,10 +11,6 @@ import socket
 from report_emailer import generate as email_generate
 from report_emailer import send as email_send
 
-"""Script that runs health checks 
-for cpu usage, disk space usage, memory usage, and hostname
-and then sends an email alert if check fails
-"""
 
 def check_cpu_usage():
   """Checks if cpu usage is over 80%"""
