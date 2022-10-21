@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 
-import os, sys
-from PIL import Image
-
-"""Script to reformat images:
+"""Script that reformats images:
 from: .TIFF format with image resolution 3000x2000
 to: .JPEG format with image resolution 600x400
 """
+
+import os, sys
+from PIL import Image
+
 
 dir_path = os.path.expanduser("~") + "/supplier-data/images/"
 os.chdir(dir_path)
