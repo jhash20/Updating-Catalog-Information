@@ -61,7 +61,7 @@ def main(argv):
   check_cpu_usage()
   check_free_disk_space("/")
   check_available_memory()
-  check_hostname('localhost', '127.0.0.1')
+  check_hostname("localhost", "127.0.0.1")
   
 if __name__ == "__main__":
   main(sys.argv)
