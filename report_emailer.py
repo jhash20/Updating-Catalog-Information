@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
+"""Module for generating and sending emails"""
+
 import email.message
 import mimetypes
 import os.path
 import smtplib
 
-"""Module for generating and sending emails"""
 
 def generate(sender, recipient, subject, body, attachment_path):
   """Generates an email."""
