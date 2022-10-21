@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
+"""Script that uploads images to web service endpoint
+by iterating through directory of .jpeg files and making a POST request.
+Also prints a response status code
+"""
+
 import os, sys
 import requests
-
-"""Script that iterates through directory of images 
-and uploads .jpeg files to web service endpoint
-by making a POST request and then prints a response status code
-"""
 
 dir_path = os.path.expanduser('~') + '/supplier-data/images/'
 os.chdir(dir_path)
