@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
-"""Processes text files in a directory and 
-generates a report and sends it to supplier via email, 
-detailing the type and amount of each fruit uploaded to catalog.
+"""Generates a report and emails it
+by processing text files in a directory,
+generating a pdf, and sending it to supplier via email. 
+The report details the type and amount of each fruit uploaded to catalog.
 """
 
 import os, sys
