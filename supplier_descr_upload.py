@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 
+"""Script that processes text and uploads to web service endpoint
+by iterating through a directory of text files, processing the information into a dictionary,
+and then makes POST requests to the web service endpoint.
+Also, converts the dictionary into JSON format in the process.
+"""
+
 import os
 import requests
 import json
 import re
 
-"""Script that iterates through a directory of text files, 
-processes the information into a dictionary, 
-and then makes POST requests to the web service endpoint, 
-converting the dictionary into JSON format in the process.
-"""
 
 descr_dir = os.path.expanduser("~") + "/supplier-data/descriptions/"
 descr_dict = {}
